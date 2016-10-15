@@ -1,2 +1,2 @@
 # sample-django-cms
-Starter project for the Django Cms web application.
+Starter project for the "Django Cms" web application.
