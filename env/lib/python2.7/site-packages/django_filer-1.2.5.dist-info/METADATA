@@ -1,0 +1,65 @@
+Metadata-Version: 2.0
+Name: django-filer
+Version: 1.2.5
+Summary: A file management application for django that makes handling of files and images a breeze.
+Home-page: http://github.com/divio/django-filer
+Author: Stefan Foulis
+Author-email: stefan@foulis.ch
+License: BSD
+Platform: OS Independent
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 1.5
+Classifier: Framework :: Django :: 1.6
+Classifier: Framework :: Django :: 1.7
+Classifier: Framework :: Django :: 1.8
+Classifier: Framework :: Django :: 1.9
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Requires-Dist: Django (>=1.5,<1.9.999)
+Requires-Dist: Unidecode (>=0.04,<0.05)
+Requires-Dist: django-mptt (>=0.6,<0.9)
+Requires-Dist: django-polymorphic (>=0.7,<0.9)
+Requires-Dist: easy-thumbnails (>=1.0,<2.4)
+
+============
+django-filer
+============
+
+
+A file management application for django that makes handling of files and images a breeze.
+
+.. We're using absolute image url below, because relative paths won't work on
+   pypi. github would render relative paths correctly.
+
+.. image:: https://raw.githubusercontent.com/divio/django-filer/develop/docs/_static/filer_1.png
+.. image:: https://raw.githubusercontent.com/divio/django-filer/develop/docs/_static/filer_2.png
+.. image:: https://raw.githubusercontent.com/divio/django-filer/develop/docs/_static/filer_3.png
+
+
+Filer detail view:
+
+.. image:: https://raw.githubusercontent.com/divio/django-filer/develop/docs/_static/detail_image.png
+.. image:: https://raw.githubusercontent.com/divio/django-filer/develop/docs/_static/detail_file.png
+
+
+Filer picker widget:
+
+.. image:: https://raw.githubusercontent.com/divio/django-filer/develop/docs/_static/file_picker_1.png
+.. image:: https://raw.githubusercontent.com/divio/django-filer/develop/docs/_static/file_picker_2.png
+.. image:: https://raw.githubusercontent.com/divio/django-filer/develop/docs/_static/file_picker_3.png
+
+Please head over to `documentation`_ for all the details on how to install,
+configure and use django-filer.
+
+.. _documentation: https://django-filer.readthedocs.io/en/latest/index.html
+
+

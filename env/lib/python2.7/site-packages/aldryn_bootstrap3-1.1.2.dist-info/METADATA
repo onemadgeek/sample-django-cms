@@ -1,0 +1,28 @@
+Metadata-Version: 2.0
+Name: aldryn-bootstrap3
+Version: 1.1.2
+Summary: cms plugins and helpers for bootstrap3 based sites
+Home-page: https://github.com/aldryn/aldryn-bootstrap3
+Author: Divio AG
+Author-email: info@divio.ch
+License: LICENSE.txt
+Platform: OS Independent
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks
+Requires-Dist: django-appconf (>=1.0.0)
+Requires-Dist: django-cms (>=3.3.0)
+Requires-Dist: django-durationfield (>=0.5.1)
+Requires-Dist: django-filer (>=0.9.11)
+Requires-Dist: djangocms-attributes-field (>=0.1.1)
+
+UNKNOWN
+
+

@@ -1,0 +1,444 @@
+====================
+django CMS Installer
+====================
+
+.. image:: https://img.shields.io/pypi/v/djangocms-installer.svg?style=flat-square
+    :target: https://pypi.python.org/pypi/djangocms-installer
+    :alt: Latest PyPI version
+
+.. image:: https://img.shields.io/pypi/dm/djangocms-installer.svg?style=flat-square
+    :target: https://pypi.python.org/pypi/djangocms-installer
+    :alt: Monthly downloads
+
+.. image:: https://img.shields.io/pypi/pyversions/djangocms-installer.svg?style=flat-square
+    :target: https://pypi.python.org/pypi/djangocms-installer
+    :alt: Python versions
+
+.. image:: https://img.shields.io/travis/nephila/djangocms-installer.svg?style=flat-square
+    :target: https://travis-ci.org/nephila/djangocms-installer
+    :alt: Latest Travis CI build status
+
+.. image:: https://img.shields.io/coveralls/nephila/djangocms-installer/master.svg?style=flat-square
+    :target: https://coveralls.io/r/nephila/djangocms-installer?branch=master
+    :alt: Test coverage
+
+.. image:: https://img.shields.io/codecov/c/github/nephila/djangocms-installer/master.svg?style=flat-square
+    :target: https://codecov.io/github/nephila/djangocms-installer
+    :alt: Test coverage
+
+.. image:: https://codeclimate.com/github/nephila/djangocms-installer/badges/gpa.svg?style=flat-square
+   :target: https://codeclimate.com/github/nephila/djangocms-installer
+   :alt: Code Climate
+
+Command to easily bootstrap django CMS projects
+
+* Free software: BSD license
+
+Features
+--------
+
+``djangocms-installer`` is a console wizard to help bootstrapping a django CMS
+project.
+
+Refer to `django CMS Tutorial`_ on how to properly setup your first django CMS project.
+
+.. warning:: Version 0.9 dropped support for Python 2.6, Django <1.8 and django CMS < 3.2.
+             More 0.8.x versions may be released after 0.9 is out in case important bugfixes will
+             be needed.
+
+Usage
+-----
+
+To create your first django CMS project run::
+
+    djangocms my_project
+
+That's all!
+
+This command will:
+
+* Create a Django project
+* Install django CMS and its core plugins
+* Create and populate the database
+* Install default templates
+
+Just run ``manage.py runserver``, go to http://localhost:8000 , login with user *admin* (same password)
+and enjoy your first django CMS project.
+
+More at `django CMS Tutorial`_ and `installer usage page`_
+
+Documentation
+-------------
+
+For detailed information see https://djangocms-installer.readthedocs.io
+
+Preliminary checks and system libraries
+---------------------------------------
+
+While this wizard try to handle most of the things for you, it doesn't check for
+all the proper native (non python) libraries to be installed.
+Before running this, please check you have the proper header and libraries
+installed and available for packages to be installed.
+
+Libraries you would want to check:
+
+* libjpeg (for JPEG support in ``Pillow``)
+* zlib (for PNG support in ``Pillow``)
+* postgresql (for ``psycopg2``)
+* libmysqlclient (for ``Mysql``)
+* python-dev (for compilation and linking)
+
+For additional information, check https://djangocms-installer.readthedocs.io/en/latest/libraries.html
+
+Supported versions
+------------------
+
+The current supported version matrix is the following:
+
++----------------+-------------+-------------+---------------+
+|                | Django 1.8  | Django 1.9  | Django 1.10   |
++----------------+-------------+-------------+---------------+
+| django CMS 3.2 | Supported   | Supported   | Unsupported   |
++----------------+-------------+-------------+---------------+
+| django CMS 3.3 | Supported   | Supported   | Unsupported   |
++----------------+-------------+-------------+---------------+
+| django CMS 3.4 | Supported   | Supported   | WiP           |
++----------------+-------------+-------------+---------------+
+
+See `version 0.8`_ for older Django / django CMS versions support
+
+Any beta and develop version of Django and django CMS, by its very nature,
+it's not supported, while it still may work.
+
+``djangocms-installer`` tries to support beta versions of django CMS when they
+are be considered sufficiently stable by the upstream project.
+
+Warning
+-------
+
+``djangocms-installer`` assumes that ``django-admin.py`` is installed in the same directory
+as python executable, which is the standard virtualenv layout.
+
+
+Windows support
+---------------
+
+The installer is tested on Windows 7 with Python versions 3.4.2 and 2.7.8 installed using
+official MSI packages available at http://python.org.
+
+Please check that the ``.py`` extension is associated correctly with Python interpreter::
+
+    c:\> assoc .py
+    .py=Python.File
+
+    c:\>ftype Python.File
+    Python.File="C:\Windows\py.exe" "%1" %*
+
+
+.. _version 0.8: https://github.com/nephila/djangocms-installer/tree/release/0.8.x#supported-versions
+.. _django CMS Tutorial: https://django-cms.readthedocs.io/en/latest/introduction/index.html
+.. _installer usage page: http://djangocms-installer.readthedocs.io/en/latest/usage.html
+
+
+
+
+History
+-------
+
+0.9.1 (2016-10-02)
+++++++++++++++++++
+
+* Fixed issue with -p parameter
+
+0.9.0 (2016-09-15)
+++++++++++++++++++
+
+* Drop support for Python 2.6
+* Drop support for Django < 1.8
+* Drop support for django CMS < 3.2
+* Improve inline documentation
+* If -s option is used, original directory is not removed
+* Set django CMS 3.3 as stable
+* Add support for 'rc' releases
+* Only "core" plugins are now supported
+* Drop support for django-reversion in django CMS 3.4 (due to upstream drop)
+* Make project-path option optional
+* Batch mode is now the default one
+* Add support for conda package manager
+* Admin user is now created in batch mode by default. Use --no-user option to skip user creation
+* In batch mode directory is not removed in case of cleanup unless --delete-project-dir is given
+* Disable permission by default
+
+0.8.12 (2016-08-27)
++++++++++++++++++++
+
+* Pin plugins versions
+
+0.8.11 (2016-07-15)
++++++++++++++++++++
+
+* Better plugins version pinning
+* Move sitemaps to non-language prefix url
+* Fallback to UTC when timezone cannot be detected
+* Pin html5lib version
+
+0.8.10 (2016-05-28)
++++++++++++++++++++
+
+* Add support for django CMS 3.3 final
+
+0.8.9 (2016-05-19)
+++++++++++++++++++
+
+* Add support for django CMS 3.3rc
+
+0.8.8 (2016-05-06)
+++++++++++++++++++
+
+* Force language codes to lowercase
+* Force i18n if multiple languages is provided
+* Fix some errors in selecting dependencies
+* Fix error in Django 1.9 regexp
+
+0.8.7 (2016-02-23)
+++++++++++++++++++
+
+* Add clearer cleanup message
+
+0.8.6 (2016-02-05)
+++++++++++++++++++
+
+* Add support for Django 1.9
+* Fix formatting CONN_MAX_AGE
+* Improve error handling in case of fatal error
+
+0.8.5 (2015-12-24)
+++++++++++++++++++
+
+* Fix createsuperuser command
+
+0.8.4 (2015-12-21)
+++++++++++++++++++
+
+* Remove flash plugin from installed plugins
+* Add ``--verbose`` option to improve debug
+* Fix unicode errors
+* Improve documentation
+
+0.8.3 (2015-11-25)
+++++++++++++++++++
+
+* Improve text editor plugin version selection
+* Improve admin style version selection
+
+0.8.2 (2015-11-24)
+++++++++++++++++++
+
+* Add support for django CMS 3.2
+* Add support for apphook reload middleware
+* Add viewport meta tag for mobile devices support
+
+0.8.1 (2015-10-11)
+++++++++++++++++++
+
+* Add option to not install plugins
+* Add Python 3.5 to build matrix
+* Add argument to pass options to pip
+* Fix support for custom user models
+* Dump requirements file in the created project
+* Improve documentation
+
+0.8.0 (2015-08-30)
+++++++++++++++++++
+
+* Options can now be provided via an ini file for easy scripting
+* Better migration modules discovery strategy
+* Minor fixes
+
+0.7.9 (2015-07-21)
+++++++++++++++++++
+
+* Better Django 1.8 support
+* Fix error with newer Pillow versions
+
+0.7.8 (2015-06-27)
+++++++++++++++++++
+
+* Add Django 1.8 support
+* Fix template styles
+
+0.7.7 (2015-06-05)
+++++++++++++++++++
+
+* Switch to cloudflare CDN for bootstrap template
+* Fix support for django-filer 0.9.10
+
+0.7.6 (2015-05-01)
+++++++++++++++++++
+
+* Switch to django CMS 3.1 as stable django CMS release
+* Rework the Django supported matrix
+* Always use djangocms-link instead of cmsplugin-filer-link
+
+0.7.5 (2015-04-21)
+++++++++++++++++++
+
+* Add support for django CMS 3.1
+* Switch to Django 1.7 as stable django release
+
+0.7.4 (2015-04-14)
+++++++++++++++++++
+
+* Add automatic timezone detection
+* Pin django-reversion versions
+* Make installer more compatible with windows environment
+
+0.7.3 (2015-04-08)
+++++++++++++++++++
+
+* Fix issues with django CMS requirements
+* Fix minor issues in shipped templates
+
+0.7.2 (2015-02-08)
+++++++++++++++++++
+
+* Fixed Windows compatibility issues
+* Fixed python 3 compatibility issues
+* Add a flag to skip the project directory emptiness check
+
+0.7.1 (2015-01-15)
+++++++++++++++++++
+
+* Ask for permission before cleanup
+* Clarify the `-p` parameter
+* Check if the project directory is empty before proceeding
+
+0.7.0 (2015-01-10)
+++++++++++++++++++
+
+* Improved support for Django 1.7 and django CMS develop (3.1)
+* Totally new test strategy
+* Reverted -I parameter to install packages
+* Improved support for cleanup after failure
+
+0.6.0 (2014-11-30)
+++++++++++++++++++
+
+* Add support for installing aldryn-boilerplate
+* Force installing all packages (-I) when creating the project virtualenv
+* Fix multiplatform support bugs
+* Update supported Django / django CMS versions
+* Add preliminary support for django CMS develop (3.1)
+
+0.5.4 (2014-08-14)
+++++++++++++++++++
+
+* Fix reversion version selection for older Django versions
+* Better project name validation
+
+0.5.3 (2014-07-23)
+++++++++++++++++++
+
+* Add support for easy_thumbnails 2.0 migrations
+* Fix asking for creating user even when --no-input flag is used
+* Unpin reversion as django CMS 3.0.3 solves the issue
+* Versioned dependency for django-filer when installing django CMS 2.4
+* Switch to official django-filer and cmsplugin-filer releases for CMS 3.0
+
+0.5.2 (2014-05-30)
+++++++++++++++++++
+
+* Pin reversion to 1.8 waiting for a proper fix in django CMS
+
+0.5.1 (2014-05-22)
+++++++++++++++++++
+
+* Fix error in bootstrap template handling
+* Add clarification about custom template set and starting page
+
+0.5.0 (2014-05-21)
+++++++++++++++++++
+
+* Add dump-requirements argument
+* Add user provided extra setting
+* Add FAQ section
+* Add templates argument
+* Documentation update
+
+0.4.2 (2014-04-26)
+++++++++++++++++++
+
+* Use current cms.context_processors.cms_settings instead of deprecated one
+* Document some fixes for library issues
+* Fix Python 3 issue
+* Switch default Django version to stable instead of 1.5
+
+0.4.1 (2014-04-09)
+++++++++++++++++++
+
+* Fix some newlines issues in the settings file
+
+0.4.0 (2014-04-09)
+++++++++++++++++++
+
+* Update for django CMS 3.0 stable!
+* Fixes for settings parameter
+
+0.3.5 (2014-04-03)
+++++++++++++++++++
+
+* Update for django CMS 3.0c2
+
+0.3.4 (2014-03-29)
+++++++++++++++++++
+
+* Fix issues with django CMS 2.4
+
+0.3.3 (2014-03-20)
+++++++++++++++++++
+
+* Better handling of differenct CMS version configuration
+
+0.3.2 (2014-03-18)
+++++++++++++++++++
+
+* Fix some versioned dependency resolve error
+
+0.3.1 (2014-03-16)
+++++++++++++++++++
+
+* Fix error in loading resource files
+* Fix error with non-standard python executable paths
+* Fix error with Django 1.6
+* Fix error installing django-filer
+
+0.3.0 (2014-03-15)
+++++++++++++++++++
+
+* Sync with django CMS RC1 changes
+* Use external django CMS plugins instead of removed core ones
+
+0.2.0 (2014-02-06)
+++++++++++++++++++
+
+* Project renamed to djangocms-installer
+* Bugfixes
+* Better default templates
+* Python 3 compatibility
+* Django 1.6 compatibility
+* django CMS 3 beta3 and dev snapshot support
+* Support for django-admin project templates
+* Ships Twitter bootstrap templates
+* Can now creates a dummy starting page
+
+0.1.1 (2013-10-20)
+++++++++++++++++++
+
+* Improved documentation on how to fix installation in case of missing libraries.
+
+0.1.0 (2013-10-19)
+++++++++++++++++++
+
+* First public release.
+
+

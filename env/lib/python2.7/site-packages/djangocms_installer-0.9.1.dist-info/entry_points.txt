@@ -1,0 +1,3 @@
+[console_scripts]
+djangocms = djangocms_installer.main:execute
+
