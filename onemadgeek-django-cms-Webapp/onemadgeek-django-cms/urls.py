@@ -11,14 +11,8 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 admin.autodiscover()
 
 urlpatterns = [
-    url(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap',
-        {'sitemaps': {'cmspages': CMSSitemap}}),
-    url(r'^select2/', include('django_select2.urls')),
-]
-
-urlpatterns = [
-     url(r'^admin/', include(admin.site.urls)),  # NOQA
-    url(r'^', include('cms.urls')),
+     url(r'^admin/', include(admin.site.urls)),
+     url(r'^', include('cms.urls')),
 ]
 
 # This is only needed when using runserver.
