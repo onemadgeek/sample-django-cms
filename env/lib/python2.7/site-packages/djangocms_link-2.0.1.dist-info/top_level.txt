@@ -1,2 +1,0 @@
-djangocms_link
-tests

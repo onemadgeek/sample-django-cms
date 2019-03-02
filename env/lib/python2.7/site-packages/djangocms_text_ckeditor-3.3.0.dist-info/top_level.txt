@@ -1,1 +1,0 @@
-djangocms_text_ckeditor
